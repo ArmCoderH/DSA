@@ -1,4 +1,5 @@
 #include<iostream>
+#include<map>
 using namespace std;
 class node
 {
@@ -125,44 +126,68 @@ void print(node* &head)
 
 
 }
+bool detectLoop(node* head)
+{
+    if(head == NULL)
+    {
+        return false;
+    }
+
+    map<node*, bool>visited;
+
+    node* temp = head;
+
+    while (temp != NULL)
+    {
+        //cycle is present
+        if(visited[temp] == true)
+        {
+            cout<<"cycle element = "<<temp -> data<<endl;
+            return true;
+        }
+        
+        visited[temp] = true;
+        temp = temp -> next;
+    }
+    
+    return false;
+
+}
 
 int main()
 {
 
     node* node1 = new node(10);
-    // node n1;
-    // cout<<n1.data<<endl;
-    // cout<<n1.next;
-   //cout<<node1 -> data<<endl;
-   //cout<<node1 -> next <<endl;
 
-   
    node* last = node1;
    node* head = node1;
-  // print(head); 
 
-//    insertAtFirst(head,12);
-//    print(head);
 
    insertAtFirst(head,15);
-  // print(head);
-
+  
    insertAtLast(last,12);
-   //print(head);
+ 
 
    insertAtLast(last,14);
-  // print(head);
+ 
 
    insertAtLast(last,44);
    print(head);
-  
-    cout<<"first is="<<head -> data<<endl;
-    cout<<"last is="<<last -> data<<endl;
 
-    //deleteNode(1,head);
-    //print(head);
+   
 
-    // deleteNode(4,head);
-   // print(head);
+   if (detectLoop(head))
+   {
+        cout<<"Cycle is present"<<endl;
+   }
+   else
+   {
+        cout<<"Cycle is not present"<<endl;
+   }
+   
+
+    // cout<<"first is="<<head -> data<<endl;
+    // cout<<"last is="<<last -> data<<endl;
+
    return 0;
 }
