@@ -176,7 +176,7 @@ int main()
 
    
 
-   if (detectLoop(head))
+   if(detectLoop(head))
    {
         cout<<"Cycle is present"<<endl;
    }
@@ -185,7 +185,6 @@ int main()
         cout<<"Cycle is not present"<<endl;
    }
    
-
     // cout<<"first is="<<head -> data<<endl;
     // cout<<"last is="<<last -> data<<endl;
 
