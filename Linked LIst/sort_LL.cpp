@@ -133,6 +133,7 @@ node* sortList(node *head){
     node* temp = head;
     while(temp != NULL)
     {
+            
         if(temp->data == 0)
         {
             zero++;
@@ -200,7 +201,7 @@ int main()
   // print(head);
 
    insertAtFirst(head,2);
-   
+
    print(head);
 
    sortList(head);
