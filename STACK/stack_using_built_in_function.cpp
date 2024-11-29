@@ -17,7 +17,7 @@ int main()
         cout<<"stack is empty" <<endl;
     }
     else{
-        cout<< "stack is not empty" <<endl;
+        cout<<"stack is not empty" <<endl;
     }
     
  return 0;
