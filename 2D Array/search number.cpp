@@ -8,8 +8,7 @@ bool isPresent(int arr[][3], int target, int row, int col) {
             
             if( arr[row][col] == target) {
                 return 1;
-            }
-            
+            } 
         }
     }
     return 0;
