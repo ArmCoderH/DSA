@@ -40,4 +40,5 @@ int main() {
     wavePrint(arr, nRows, mCols);
 
     return 0;
+
 }
